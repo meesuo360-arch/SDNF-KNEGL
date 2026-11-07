@@ -1,69 +1,63 @@
-import Image from "next/image";
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main className="min-h-screen bg-[#09090b] text-zinc-100 selection:bg-rose-600 selection:text-white">
+      <Navbar />
+      <Hero />
+      
+      <section id="about" className="max-w-4xl mx-auto px-6 py-20">
+        <h2 className="text-2xl font-bold mb-6 border-b border-zinc-800 pb-2">About Me</h2>
+        <h3 className="text-xl font-semibold text-rose-500 mb-4">I&apos;m Ahmed Mohamed</h3>
+        <p className="text-zinc-400 leading-relaxed mb-4">
+          In 2018, I took the plunge into the world of custom Discord bots, immersing myself in the intricate realm of coding and web development. As time marched on, I found myself fortunate to craft software for a diverse array of clients.
+        </p>
+        <p className="text-zinc-400 leading-relaxed">
+          Currently, my primary focus revolves around crafting products for clients at Mostaql. During my free time, I delve into exploring new concepts, trends, and emerging technologies.
+        </p>
+      </section>
+
+      <section id="projects" className="max-w-6xl mx-auto px-6 py-20">
+        <h2 className="text-2xl font-bold mb-2">My Projects</h2>
+        <p className="text-sm text-zinc-500 mb-10">I prioritize client privacy and only showcase projects with their explicit approval</p>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="bg-zinc-900/40 border border-zinc-800 rounded-xl p-5 hover:border-zinc-700 transition">
+            <h3 className="text-lg font-bold text-white mb-2">BlitzMarks</h3>
+            <p className="text-zinc-400 text-sm mb-4">Retrieve your high school exam results effortlessly with comprehensive performance details.</p>
+            <div className="flex flex-wrap gap-2 text-xs text-rose-400 font-mono">
+              <span className="bg-zinc-800 px-2 py-1 rounded">TypeScript</span>
+              <span className="bg-zinc-800 px-2 py-1 rounded">Next.js</span>
+              <span className="bg-zinc-800 px-2 py-1 rounded">React</span>
+            </div>
+          </div>
+
+          <div className="bg-zinc-900/40 border border-zinc-800 rounded-xl p-5 hover:border-zinc-700 transition">
+            <h3 className="text-lg font-bold text-white mb-2">Ugurly</h3>
+            <p className="text-zinc-400 text-sm mb-4">A URL shortener service shorten Your URL, Expand Your Possibilities.</p>
+            <div className="flex flex-wrap gap-2 text-xs text-rose-400 font-mono">
+              <span className="bg-zinc-800 px-2 py-1 rounded">TypeScript</span>
+              <span className="bg-zinc-800 px-2 py-1 rounded">Node.js</span>
+              <span className="bg-zinc-800 px-2 py-1 rounded">Next.js</span>
+            </div>
+          </div>
+
+          <div className="bg-zinc-900/40 border border-zinc-800 rounded-xl p-5 hover:border-zinc-700 transition">
+            <h3 className="text-lg font-bold text-white mb-2">ShareMe</h3>
+            <p className="text-zinc-400 text-sm mb-4">Discord bot for community content sharing and management.</p>
+            <div className="flex flex-wrap gap-2 text-xs text-rose-400 font-mono">
+              <span className="bg-zinc-800 px-2 py-1 rounded">TypeScript</span>
+              <span className="bg-zinc-800 px-2 py-1 rounded">Next.js</span>
+              <span className="bg-zinc-800 px-2 py-1 rounded">React</span>
+            </div>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </section>
+
+      <footer className="text-center py-10 border-t border-zinc-900 text-sm text-zinc-600">
+        Copyright © 2026 Ahmed Mohamed. All rights reserved.
+      </footer>
+    </main>
   );
 }
